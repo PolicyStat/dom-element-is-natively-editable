@@ -1,0 +1,28 @@
+{
+  "name": "dom-element-is-natively-editable",
+  "version": "1.0.0",
+  "description": "Returns true if the provided DOM element is supposed to be natively editable",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PolicyStat/dom-element-is-natively-editable.git"
+  },
+  "keywords": [
+    "contentEditable",
+    "designMode",
+    "textarea",
+    "input"
+  ],
+  "author": "Shahar Or (http://mightyi.am)",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/PolicyStat/dom-element-is-natively-editable/issues"
+  },
+  "homepage": "https://github.com/PolicyStat/dom-element-is-natively-editable#readme",
+  "devDependencies": {
+    "standard": "^5.4.1"
+  }
+}
