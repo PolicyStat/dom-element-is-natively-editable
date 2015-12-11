@@ -40,8 +40,7 @@ describe('dom-element-is-natively-editable', () => {
         const parent = document.querySelector('div')
         parent.contentEditable = 'true'
         const element = document.querySelector('p')
-        // because jsdom doesn't populate this property by default
-        // while browsers do
+        // because jsdom doesn't populate this property by default while browsers do
         element.contentEditable = 'inherit'
         isEditable(element).should.be.true
         done()
@@ -58,6 +57,24 @@ describe('dom-element-is-natively-editable', () => {
         parent.contentEditable = 'true'
         const element = document.querySelector('p')
         element.contentEditable = 'false'
+        isEditable(element).should.be.false
+        done()
+      })
+    })
+  })
+  context('provided element in which `contentEditable` inheritance was overridden in parent', () => {
+    it('sync returns false', (done) => {
+      jsdom.env('<div><div id="parent"><p>`contentEditable` inheritance overridden in parent</p></div></div>', (err, {document}) => {
+        if (err) {
+          return
+        }
+        const container = document.querySelector('div')
+        container.contentEditable = 'true'
+        const parent = document.querySelector('#parent')
+        parent.contentEditable = 'false'
+        const element = document.querySelector('p')
+        // because jsdom doesn't populate this property by default while browsers do
+        element.contentEditable = 'inherit'
         isEditable(element).should.be.false
         done()
       })
