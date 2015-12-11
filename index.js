@@ -8,7 +8,7 @@ module.exports = function (element) {
 
   switch (element.tagName.toLowerCase()) {
     case 'input':
-      return true
+      return isEditableInput(element)
     case 'textarea':
       return true
   }
@@ -35,4 +35,23 @@ function isContentEditable (element) {
     return isContentEditable(element.parentNode)
   }
   return false
+}
+
+function isEditableInput (input) {
+  switch (input.type) {
+    case 'text':
+      return true
+    case 'email':
+      return true
+    case 'password':
+      return true
+    case 'search':
+      return true
+    case 'tel':
+      return true
+    case 'url':
+      return true
+    default:
+      return false
+  }
 }
