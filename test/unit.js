@@ -80,14 +80,32 @@ describe('dom-element-is-natively-editable', () => {
     })
   })
   context('provided an `input` element', () => {
-    it('sync returns true', (done) => {
-      jsdom.env('<input>input</input>', (err, {document}) => {
-        if (err) {
-          return
-        }
-        const element = document.querySelector('input')
-        isEditable(element).should.be.true
-        done()
+    // this list of types is kind of a guess based on:
+    // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+    ;['text', 'email', 'password', 'search', 'tel', 'url'].forEach((type) => {
+      context(`that is of type \`${type}\``, () => {
+        it('sync returns true', (done) => {
+          jsdom.env(`<input type="${type}">${type} input</input>`, (err, {document}) => {
+            if (err) {
+              return
+            }
+            const element = document.querySelector('input')
+            isEditable(element).should.be.true
+            done()
+          })
+        })
+      })
+    })
+    context('that is not of an editable type (`radio`)', () => {
+      it('sync returns false', (done) => {
+        jsdom.env('<input type="radio">radio input</input>', (err, {document}) => {
+          if (err) {
+            return
+          }
+          const element = document.querySelector('input')
+          isEditable(element).should.be.false
+          done()
+        })
       })
     })
   })
