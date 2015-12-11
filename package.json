@@ -3,6 +3,7 @@
   "version": "1.0.2",
   "description": "Returns true if the provided DOM element is supposed to be natively editable",
   "main": "index.js",
+  "browserify": { "transform": ["babelify"] },
   "scripts": {
     "test": "npm run lint && npm run unit",
     "lint": "standard",
