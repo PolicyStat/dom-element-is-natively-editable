@@ -3,7 +3,6 @@
 require('chai').should()
 const jsdom = require('jsdom')
 const isEditable = require('..')
-console.log(isEditable)
 
 describe('dom-element-is-natively-editable', () => {
   context('provided a non editable element', () => {
