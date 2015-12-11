@@ -1,6 +1,6 @@
 {
   "name": "dom-element-is-natively-editable",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Returns true if the provided DOM element is supposed to be natively editable",
   "main": "index.js",
   "scripts": {
