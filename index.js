@@ -1,4 +1,4 @@
-module.exports = function (element) {
+export default function (element) {
   if (
     element.ownerDocument.designMode &&
     element.ownerDocument.designMode.toLowerCase() === 'on'

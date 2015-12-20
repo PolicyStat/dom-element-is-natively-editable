@@ -1,8 +1,9 @@
 /* eslint-env mocha */
 
-require('chai').should()
-const jsdom = require('jsdom')
-const isEditable = require('..')
+import chai from 'chai'
+chai.should()
+import jsdom from 'jsdom'
+import isEditable from '..'
 
 describe('dom-element-is-natively-editable', () => {
   context('provided a non editable element', () => {
