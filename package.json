@@ -1,9 +1,13 @@
 {
   "name": "dom-element-is-natively-editable",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Returns true if the provided DOM element is supposed to be natively editable",
   "main": "index.js",
-  "browserify": { "transform": ["babelify"] },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
   "scripts": {
     "test": "npm run lint && npm run unit",
     "lint": "standard",
